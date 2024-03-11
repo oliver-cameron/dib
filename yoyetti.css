@@ -3,7 +3,7 @@
     width:100vw;
     position:sticky;
     top:0;
-    border: 2px #e6e6e6 solid;
+    border: 2px var(--yeti-white) solid;
     background-color: #fff;
     display: flex;
     flex-direction: row;
@@ -22,7 +22,7 @@ html{
     width:100%;
     height:100vh;
     scroll-behavior: initial;
-    background: #91278f;
+    background: var(--acai);
 }
 #main{
     height: 100%;
@@ -35,7 +35,7 @@ html{
 }
 
 .page_link{
-    color: #91278f;
+    color: var(--acai);
     font-size: 20px;
 }
 .para-left{
@@ -52,8 +52,8 @@ html{
 }
 #containmain{
     z-index: 2;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /*flex-direction: column;*/
     row-gap: 120px;
     padding: 20px;
     font-family: Sf-Pro;
@@ -65,6 +65,7 @@ html{
     backdrop-filter: blur(5px);
     height:calc(100vh - 120px);
     overflow: scroll;
+    border-spacing: 20px;
 }
 #background{
     z-index: 1;
@@ -76,4 +77,13 @@ html{
 #background img{
     width: 100px;;
     height: 100px;
+}
+
+.para-left :not(:first-child), .para-right :not(:first-child){
+    margin-top: 60px;
+}
+:root{
+    --acai: #91278f;
+    --yeti-blue: #b6e4fa;
+    --yeti-white: #e6e6e6;
 }
