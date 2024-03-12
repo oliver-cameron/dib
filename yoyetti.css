@@ -17,6 +17,7 @@ body{
     margin:0;
     overflow: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--blackberry);
 }
 html{
     width:100%;
@@ -58,7 +59,7 @@ html{
     padding: 20px;
     font-family: Sf-Pro;
     font-size: 30px;
-    background-color: #ffffff99;
+    background-color: #ffffff;
     position: absolute;
     top:0;
     -webkit-backdrop-filter: blur(5px);
@@ -66,6 +67,7 @@ html{
     height:calc(100vh - 120px);
     overflow: scroll;
     border-spacing: 20px;
+    width: 100%;
 }
 #background{
     z-index: 1;
@@ -79,11 +81,71 @@ html{
     height: 100px;
 }
 
-.para-left :not(:first-child), .para-right :not(:first-child){
-    margin-top: 60px;
+#containmain > div{
+    margin-bottom: 100px;
 }
 :root{
     --acai: #91278f;
     --yeti-blue: #b6e4fa;
     --yeti-white: #e6e6e6;
+    --banana: #eebb22;
+    --blueberry: #4f86f7;
+    --coconut: #cb8763;
+    --mango: #e84440;
+    --pear: #cdd75c;
+    --blackberry: #130e13;
+}
+.vitmin-container{
+    width: 120px;
+    height: 120px;
+}
+.vitmin-container img{
+    width: 100px;
+    height: 100px;
+}
+.vitmin-container p{
+    font-size: 20px;
+    color: var(--acai);
+}
+#vitmin-grid{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 50px 50px;
+    justify-content: center;
+    /*width: 100%;*/
+    align-content: space-around;
+}
+.ingredient-container{
+    width: 480px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: var(--content-colour);
+    gap: 5px;
+}
+.ingredient-container img{
+    height: 270px;
+    /*overflow-y: hidden;*/
+}
+.ingredient-container h3{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.ingredient-container p{
+    font-size: 20px;
+    text-align: center;
+
+}
+.vitminingredient{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.vitminingredient img{
+    width: 40px;
+    height: 40px;
 }
