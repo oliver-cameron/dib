@@ -68,4 +68,25 @@ if (location.pathname.split("/").slice(-1)[0] == "product.html") {
     </div>`;
   }
   document.getElementById("vitmin-grid").innerHTML = vitmin2;
+
 }
+
+        // start video at frame 0
+        var frameNumber = 0,
+        
+        // lower numbers = faster playback
+        playbackConst = 800, 
+
+        // select video element         
+        vid = document.getElementById('v0'); 
+        
+
+
+    // Use requestAnimationFrame for smooth playback
+    function scrollPlay(){  
+    var frameNumber  = document.getElementById("containmain").scrollY/playbackConst;
+    vid.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
