@@ -63,30 +63,36 @@ if (location.pathname.split("/").slice(-1)[0] == "product.html") {
       vitmin2 +
       `
     <div class="vitmin-container">
-        <img width="100px" src="Icons/Icon_${vitmin[i]}.svg">
+        <img src="Icons/Icon_${vitmin[i]}.svg">
         <p>${vitmin[i]}</p>
     </div>`;
   }
-  document.getElementById("vitmin-grid").innerHTML = vitmin2;
+  setTimeout(() => {
+  document.getElementById("vitmin-grid").innerHTML = vitmin2;},20)
 
 }
+
 
         // start video at frame 0
         var frameNumber = 0,
         
         // lower numbers = faster playback
-        playbackConst = 800, 
+        playbackConst = 500, 
 
         // select video element         
         vid = document.getElementById('v0'); 
         
 
+        document.getElementById("vidcontain").style.height = Math.floor(vid.duration) * playbackConst + "px";
 
     // Use requestAnimationFrame for smooth playback
     function scrollPlay(){  
-    var frameNumber  = document.getElementById("containmain").scrollY/playbackConst;
-    vid.currentTime  = frameNumber;
-    window.requestAnimationFrame(scrollPlay);
+      console.log(document.getElementById("containmain").scrollTop)
+      console.log(document.getElementById("main").offsetHeight)
+      var frameNumber  = (document.getElementById("containmain").scrollTop - (document.getElementById("main").offsetHeight))/playbackConst;
+      vid.currentTime  = frameNumber;
+      window.requestAnimationFrame(scrollPlay);
     }
 
     window.requestAnimationFrame(scrollPlay);
+    

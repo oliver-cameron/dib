@@ -23,7 +23,6 @@ html{
     width:100%;
     height:100vh;
     scroll-behavior: initial;
-    background: var(--acai);
 }
 #main{
     height: 100%;
@@ -42,13 +41,13 @@ html{
 .para-left{
     display:flex;
     gap: 30px;
-    width:100%;
+    width: 100%;
     flex-direction: row;
 }
 .para-right{
     gap: 30px;
     display:flex;
-    width:100%;
+    width: 100%;
     flex-direction: row-reverse;
 }
 #containmain{
@@ -56,7 +55,7 @@ html{
     display: block;
     /*flex-direction: column;*/
     row-gap: 120px;
-    padding: 20px;
+    padding: 10px;
     font-family: Sf-Pro;
     font-size: 30px;
     background-color: #ffffff;
@@ -83,6 +82,7 @@ html{
 
 #containmain > div{
     margin-bottom: 100px;
+    padding:30px;
 }
 :root{
     --acai: #91278f;
@@ -99,10 +99,6 @@ html{
     width: 120px;
     height: 120px;
 }
-.vitmin-container img{
-    width: 100px;
-    height: 100px;
-}
 .vitmin-container p{
     font-size: 20px;
     color: var(--acai);
@@ -112,7 +108,7 @@ html{
     flex-flow: row wrap;
     gap: 50px 50px;
     justify-content: center;
-    /*width: 100%;*/
+    width: 100%;
     align-content: space-around;
 }
 .ingredient-container{
@@ -148,4 +144,20 @@ html{
 .vitminingredient img{
     width: 40px;
     height: 40px;
+}
+.para-left, .para-right{
+    width:50%;
+}
+#containmain > div> img :not(.vitmin-container img){
+    max-width:50%;
+    max-height:100%;
+}
+#containmain > div > div > p{
+    padding: 10px;
+    word-wrap: normal;
+    /*width:50%;*/
+}
+.vitmin-container img{
+    width: 100px;
+    height: 100px;
 }
