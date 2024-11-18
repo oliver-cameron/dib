@@ -1,8 +1,8 @@
-#topbar {
+#topbar{
     height: 120px;
-    width: 100vw;
-    position: sticky;
-    top: 0;
+    width:100vw;
+    position:sticky;
+    top:0;
     border: 2px var(--yeti-white) solid;
     background-color: #fff;
     display: flex;
@@ -11,111 +11,89 @@
     align-items: center;
     z-index: 3;
 }
-
-body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
+body{
+    width:100%;
+    height:100vh;
+    margin:0;
     overflow: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--blackberry);
 }
-
-html {
-    width: 100%;
-    height: 100vh;
+html{
+    width:100%;
+    height:100vh;
     scroll-behavior: initial;
-    background: var(--acai);
 }
-
-#main {
+#main{
     height: 100%;
-    width: 100%;
+    width:100%;
     position: relative;
 }
-
 @font-face {
     font-family: Sf-Pro;
     src: url(SF-Pro.ttf);
 }
 
-.page_link {
+.page_link{
     color: var(--acai);
     font-size: 20px;
 }
-
-.para-left {
-    display: flex;
+.para-left{
+    display:flex;
     gap: 30px;
     width: 100%;
     flex-direction: row;
-    margin: 10px;
 }
-
-.para-right {
+.para-right{
     gap: 30px;
-    display: flex;
+    display:flex;
     width: 100%;
     flex-direction: row-reverse;
-    margin: 10px;
 }
-
-.para-left > div, .para-right > div {
-    width: 50%;
+.para-left, .para-right{
+    display: flex;
+  margin: 10px;  
 }
-
-#containmain {
+.para-left > div, .para-right > div{
+    width: 50%
+}
+#containmain{
     z-index: 2;
     display: block;
+    /*flex-direction: column;*/
     row-gap: 120px;
+    /*padding: 10px;*/
     font-family: Sf-Pro;
     font-size: 30px;
     background-color: #ffffff;
     position: absolute;
-    top: 0;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    height: calc(100vh - 120px);
+    height:calc(100vh - 120px);
     overflow-x: hidden;
     overflow-y: scroll;
     border-spacing: 20px;
     width: 100%;
     bottom: 0;
 }
-
-#background {
+#background{
     z-index: 1;
-    position: absolute;
-    top: 0px;
-    overflow-y: hidden;
-    height: calc(100vh);
+    position:absolute;
+    top:0px;
+    overflow-y:hidden;
+    height:calc(100vh);
 }
-
-#background img {
-    width: 100px;
+#background img{
+    width: 100px;;
     height: 100px;
 }
 
-#containmain > div {
+#containmain > div :not(#vidcontain){
     margin-bottom: 100px;
+    /*overflow-x: hidden;*/
+padding: 10px;
 }
-
-#containmain > div:not(#vidcontain) {
-    padding: 10px;
-}
-
-#containmain > div > img:not(.vitmin-container img) {
-    max-height: 100%;
-    width: auto;
-    object-fit: contain;
-}
-
-#containmain > div > div > p {
-    padding: 10px;
-    word-wrap: normal;
-}
-
-:root {
+:root{
     --acai: #91278f;
     --yeti-blue: #b6e4fa;
     --yeti-white: #e6e6e6;
@@ -126,68 +104,71 @@ html {
     --pear: #cdd75c;
     --blackberry: #130e13;
 }
-
-.vitmin-container {
+.vitmin-container{
     width: 120px;
     height: 120px;
 }
-
-.vitmin-container img {
-    width: 100px;
-    height: 100px;
-}
-
-.vitmin-container p {
+.vitmin-container p{
     font-size: 20px;
     color: var(--acai);
 }
-
-#vitmin-grid {
+#vitmin-grid{
     display: flex;
     flex-flow: row wrap;
     gap: 50px 50px;
     justify-content: center;
+    width: 100%;
     align-content: space-around;
 }
-
-.ingredient-container {
+.ingredient-container{
     width: 480px;
     height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content:flex-start;
     color: var(--content-colour);
     gap: 5px;
 }
-
-.ingredient-container img {
+.ingredient-container img{
     height: 270px;
+    /*overflow-y: hidden;*/
 }
-
-.ingredient-container h3 {
+.ingredient-container h3{
     font-size: 30px;
     font-weight: bolder;
 }
-
-.ingredient-container p {
+.ingredient-container p{
     font-size: 20px;
     text-align: center;
-}
 
-.vitminingredient {
+}
+.vitminingredient{
     display: flex;
     flex-direction: row;
     width: 250px;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
-.vitminingredient img {
+.vitminingredient img{
     width: 40px;
     height: 40px;
 }
+#containmain > div > img :not(.vitmin-container img){
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
 
-#vidcontain {
+#containmain > div > div > p{
+    padding: 10px;
+    word-wrap: normal;
+    /*width:90%;*/
+}
+.vitmin-container img{
+    width: 100px;
+    height: 100px;
+}
+#vidcontain{
     height: 1000px;
 }
