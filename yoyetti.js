@@ -72,27 +72,27 @@ if (location.pathname.split("/").slice(-1)[0] == "product.html") {
 
 }
 
+// start video at frame 0
+var frameNumber = 0,
+  // lower numbers = faster playback
+  playbackConst = 500,
+  // select video element
+  vid = document.getElementById("v0");
 
-        // start video at frame 0
-        var frameNumber = 0,
-        
-        // lower numbers = faster playback
-        playbackConst = 500, 
+// Ensure the video metadata is loaded before setting the container height
+vid.addEventListener("loadedmetadata", () => {
+  document.getElementById("vidcontain").style.height =
+    Math.floor(vid.duration) * playbackConst + "px";
+});
 
-        // select video element         
-        vid = document.getElementById('v0'); 
-        
+// Use requestAnimationFrame for smooth playback
+function scrollPlay() {
+  var frameNumber =
+    (document.getElementById("containmain").scrollTop -
+      document.getElementById("main").offsetHeight) /
+    playbackConst;
+  vid.currentTime = frameNumber;
+  window.requestAnimationFrame(scrollPlay);
+}
 
-        document.getElementById("vidcontain").style.height = Math.floor(vid.duration) * playbackConst + "px";
-
-    // Use requestAnimationFrame for smooth playback
-    function scrollPlay(){  
-      console.log(document.getElementById("containmain").scrollTop)
-      console.log(document.getElementById("main").offsetHeight)
-      var frameNumber  = (document.getElementById("containmain").scrollTop - (document.getElementById("main").offsetHeight))/playbackConst;
-      vid.currentTime  = frameNumber;
-      window.requestAnimationFrame(scrollPlay);
-    }
-
-    window.requestAnimationFrame(scrollPlay);
-    
+window.requestAnimationFrame(scrollPlay);
